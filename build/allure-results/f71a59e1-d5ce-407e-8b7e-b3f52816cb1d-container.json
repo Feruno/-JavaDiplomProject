@@ -1,0 +1,1 @@
+{"uuid":"f71a59e1-d5ce-407e-8b7e-b3f52816cb1d","name":"invalidNumCard()","children":["8d478fd0-1199-413c-aa90-4730beb14e5d"],"befores":[{"name":"setUp","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1703680981424,"stop":1703680984253}],"afters":[],"start":1703680981362,"stop":1703680985157}

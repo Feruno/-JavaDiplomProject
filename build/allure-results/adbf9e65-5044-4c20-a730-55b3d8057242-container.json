@@ -1,0 +1,1 @@
+{"uuid":"adbf9e65-5044-4c20-a730-55b3d8057242","name":"invalidCVC_CVVCreditCardData()","children":["fa3207ce-a353-40f1-97bc-b0f0d829fd3b"],"befores":[{"name":"setUp","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1703681989078,"stop":1703681991901}],"afters":[],"start":1703681989011,"stop":1703681992977}
