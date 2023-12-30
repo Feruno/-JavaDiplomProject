@@ -33,6 +33,10 @@ dependencies {
     implementation group: 'com.codeborne', name: 'selenide', version: '6.17.0'
     implementation 'com.github.javafaker:javafaker:1.0.2'
 
+    implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.1.0'
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.3.8'
+    implementation group: 'commons-dbutils', name: 'commons-dbutils', version: '1.8.1'
+
     //implementation group: 'com.epam.reportportal', name: 'client-java', version: '5.1.22'
     //testImplementation 'com.epam.reportportal:agent-java-junit5:5.1.10'
 
@@ -52,6 +56,7 @@ test {
     testLogging.showStandardStreams = true
     useJUnitPlatform()
     systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+    systemProperty 'db.url', System.getProperty('db.url', "jdbc:mysql://localhost:3306/app")
     systemProperty 'selenide.browser', 'chrome'
     systemProperty 'junit.jupiter.extensions.autodetection.enabled', true
 }

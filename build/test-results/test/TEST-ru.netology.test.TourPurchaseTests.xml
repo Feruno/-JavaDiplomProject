@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.netology.test.TourPurchaseTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-12-30T16:38:42" hostname="DESKTOP-U7EH9UQ" time="11.209">
+  <properties/>
+  <testcase name="successfulPath()" classname="ru.netology.test.TourPurchaseTests" time="11.209"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[дек. 30, 2023 7:38:45 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 120
+дек. 30, 2023 7:38:45 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 120.0.6099.130. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.11.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+</testsuite>

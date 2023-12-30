@@ -46,6 +46,7 @@ public class DataGenerator {
         return new InfoBuyingTour("4444 4444 4444 4441", "12", "23", "SELECT * FROM users WHERE username=' ProvidedUsername' and password='ProvidedPassword';", "101");
     }
 
-
-
+    public static InfoBuyingTour getInfoBuyingTourDecline() {
+        return new InfoBuyingTour("4444 4444 4444 4442", "12", "23", "Василий", "101");
+    }
 }

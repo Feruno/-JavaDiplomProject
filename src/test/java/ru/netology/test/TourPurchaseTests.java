@@ -2,18 +2,27 @@ package ru.netology.test;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import ru.netology.data.DataGenerator;
+import ru.netology.data.HelpSQL;
 
 import java.time.Duration;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static ru.netology.data.HelpSQL.cleanDatabase;
 
 public class TourPurchaseTests {
     @BeforeEach
     void setUp() {
         open("http://localhost:8080");
+    }
+
+    @AfterAll
+    static void teardown(){
+        //cleanDatabase();
     }
 
     /*
@@ -35,6 +44,14 @@ public class TourPurchaseTests {
         $(".notification__content")
                 .shouldHave(Condition.text("Операция одобрена Банком."), Duration.ofSeconds(15))
                 .shouldBe(Condition.visible);
+
+//        String a = String.valueOf(HelpSQL.getInfoPurTime());
+//        System.out.println("времи запроса " + a);
+//        String b = String.valueOf(HelpSQL.getInfoPurStatus());
+//        System.out.println("статус " + b);
+
+        String res = HelpSQL.getInfoPurStatus().getStatus();
+        Assertions.assertEquals("APPROVED", res);
     }
 
 
@@ -53,6 +70,7 @@ public class TourPurchaseTests {
         $x("//span[text()[contains(.,'Номер карты')]]/..//span[text()[contains(.,'Неверный формат')]]/..//span[contains(@class, 'input__sub')]")
                 .shouldHave(Condition.text("Неверный формат"), Duration.ofSeconds(15))
                 .shouldBe(Condition.visible);
+
     }
 
     @org.junit.jupiter.api.Test
@@ -117,6 +135,9 @@ public class TourPurchaseTests {
         $x("//span[text()[contains(.,'Владелец')]]/..//span[text()[contains(.,'Неверный формат')]]/..//span[contains(@class, 'input__sub')]")
                 .shouldHave(Condition.text("Неверный формат"), Duration.ofSeconds(15))
                 .shouldBe(Condition.visible);
+
+        String actualRes = HelpSQL.getInfoPurStatus().getStatus();
+        Assertions.assertEquals("DECLINED", actualRes);
     }
 
     @org.junit.jupiter.api.Test
@@ -170,6 +191,8 @@ public class TourPurchaseTests {
         $x("//span[text()[contains(.,'Владелец')]]/..//span[text()[contains(.,'Неверный формат')]]/..//span[contains(@class, 'input__sub')]")
                 .shouldHave(Condition.text("Неверный формат"), Duration.ofSeconds(15))
                 .shouldBe(Condition.visible);
+        String actualRes = HelpSQL.getInfoPurStatus().getStatus();
+        Assertions.assertEquals("DECLINED", actualRes);
     }
 
     @org.junit.jupiter.api.Test
@@ -186,6 +209,8 @@ public class TourPurchaseTests {
         $x("//span[text()[contains(.,'Владелец')]]/..//span[text()[contains(.,'Неверный формат')]]/..//span[contains(@class, 'input__sub')]")
                 .shouldHave(Condition.text("Неверный формат"), Duration.ofSeconds(15))
                 .shouldBe(Condition.visible);
+        String actualRes = HelpSQL.getInfoPurStatus().getStatus();
+        Assertions.assertEquals("DECLINED", actualRes);
     }
 
     /*
@@ -208,6 +233,8 @@ public class TourPurchaseTests {
         $(".notification__content")
                 .shouldHave(Condition.text("Операция одобрена Банком."), Duration.ofSeconds(15))
                 .shouldBe(Condition.visible);
+        String res = HelpSQL.getInfoCreditPurStatus().getStatus();
+        Assertions.assertEquals("APPROVED", res);
     }
 
 
@@ -342,6 +369,8 @@ public class TourPurchaseTests {
         $x("//span[text()[contains(.,'Владелец')]]/..//span[text()[contains(.,'Неверный формат')]]/..//span[contains(@class, 'input__sub')]")
                 .shouldHave(Condition.text("Неверный формат"), Duration.ofSeconds(15))
                 .shouldBe(Condition.visible);
+        String actualRes = HelpSQL.getInfoCreditPurStatus().getStatus();
+        Assertions.assertEquals("DECLINED", actualRes);
     }
 
     @org.junit.jupiter.api.Test
@@ -355,8 +384,53 @@ public class TourPurchaseTests {
         $x("//span[text()[contains(.,'Владелец')]]/..//input[contains(@class, 'input__control')]").setValue(infoBuyTour.getNameOwner());
         $x("//span[text()[contains(.,'CVC/CVV')]]/..//input[contains(@class, 'input__control')]").setValue(infoBuyTour.getCVC_CVV());
         $(byText("Продолжить")).click();
+        String b = String.valueOf(HelpSQL.getInfoCreditPurStatus());
+        System.out.println("статус " + b);
         $x("//span[text()[contains(.,'Владелец')]]/..//span[text()[contains(.,'Неверный формат')]]/..//span[contains(@class, 'input__sub')]")
                 .shouldHave(Condition.text("Неверный формат"), Duration.ofSeconds(15))
                 .shouldBe(Condition.visible);
+        String actualRes = HelpSQL.getInfoCreditPurStatus().getStatus();
+        Assertions.assertEquals("DECLINED", actualRes);
     }
+
+    /*
+    тесты с decline статусом
+    */
+
+    @org.junit.jupiter.api.Test
+    void declinePurchase() {
+        var infoBuyTour = DataGenerator.getInfoBuyingTourDecline();
+        SelenideElement form = $("form");
+        $(byText("Купить")).click();
+        $x("//span[text()[contains(.,'Номер карты')]]/..//input[contains(@class, 'input__control')]").setValue(infoBuyTour.getNumCard());
+        $x("//span[text()[contains(.,'Месяц')]]/..//input[contains(@class, 'input__control')]").setValue(infoBuyTour.getMonth());
+        $x("//span[text()[contains(.,'Год')]]/..//input[contains(@class, 'input__control')]").setValue(infoBuyTour.getYear());
+        $x("//span[text()[contains(.,'Владелец')]]/..//input[contains(@class, 'input__control')]").setValue(infoBuyTour.getNameOwner());
+        $x("//span[text()[contains(.,'CVC/CVV')]]/..//input[contains(@class, 'input__control')]").setValue(infoBuyTour.getCVC_CVV());
+        $(byText("Продолжить")).click();
+        $(".notification__content")
+                .shouldHave(Condition.text("Операция одобрена Банком."), Duration.ofSeconds(15))
+                .shouldBe(Condition.visible);
+        String res = HelpSQL.getInfoPurStatus().getStatus();
+        Assertions.assertEquals("DECLINED", res);
+    }
+
+    @org.junit.jupiter.api.Test
+    void declineCreditPurchase() {
+        var infoBuyTour = DataGenerator.getInfoBuyingTourDecline();
+        SelenideElement form = $("form");
+        $(byText("Купить в кредит")).click();
+        $x("//span[text()[contains(.,'Номер карты')]]/..//input[contains(@class, 'input__control')]").setValue(infoBuyTour.getNumCard());
+        $x("//span[text()[contains(.,'Месяц')]]/..//input[contains(@class, 'input__control')]").setValue(infoBuyTour.getMonth());
+        $x("//span[text()[contains(.,'Год')]]/..//input[contains(@class, 'input__control')]").setValue(infoBuyTour.getYear());
+        $x("//span[text()[contains(.,'Владелец')]]/..//input[contains(@class, 'input__control')]").setValue(infoBuyTour.getNameOwner());
+        $x("//span[text()[contains(.,'CVC/CVV')]]/..//input[contains(@class, 'input__control')]").setValue(infoBuyTour.getCVC_CVV());
+        $(byText("Продолжить")).click();
+        $(".notification__content")
+                .shouldHave(Condition.text("Операция одобрена Банком."), Duration.ofSeconds(15))
+                .shouldBe(Condition.visible);
+        String res = HelpSQL.getInfoCreditPurStatus().getStatus();
+        Assertions.assertEquals("DECLINED", res);
+    }
+
 }
