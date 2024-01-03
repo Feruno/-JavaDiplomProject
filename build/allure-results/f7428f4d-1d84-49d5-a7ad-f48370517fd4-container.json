@@ -1,0 +1,1 @@
+{"uuid":"f7428f4d-1d84-49d5-a7ad-f48370517fd4","name":"declinePurchase()","children":["2563d5f6-2dd0-40b6-8a36-b53359466689"],"befores":[{"name":"setUp","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1704201894717,"stop":1704201894736}],"afters":[],"start":1704201894715,"stop":1704201905404}

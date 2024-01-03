@@ -1,0 +1,1 @@
+{"uuid":"4f07dbdc-158b-43a4-81ca-e64cc98a2c24","name":"successfulPath()","children":["429b4089-1c1b-49f7-a622-5970164ee2c7"],"befores":[{"name":"setUp","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1704191009302,"stop":1704191012546}],"afters":[],"start":1704191009231,"stop":1704191017670}

@@ -1,0 +1,1 @@
+{"uuid":"3f6e09f2-18ff-4fd3-96f3-a1b3b97f5c1b","name":"TourPurchaseTests","children":["9bd8118f-ee0e-48df-ab90-ba8988e01320"],"befores":[],"afters":[{"name":"teardown","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1704201215299,"stop":1704201215658}],"start":1704201196048,"stop":1704201215658}

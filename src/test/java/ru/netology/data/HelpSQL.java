@@ -12,6 +12,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class HelpSQL {
+    private HelpSQL(){
+    }
 
     @Value
     public static class Status{
@@ -23,8 +25,6 @@ public class HelpSQL {
     }
 
     private static final QueryRunner runner = new QueryRunner();
-    private HelpSQL(){
-    }
 
     private static Connection getConn() throws SQLException{
         return DriverManager.getConnection(System.getProperty("db.url"),  "app", "pass"); // "jdbc:mysql://localhost:3306/app"

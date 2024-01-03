@@ -2,13 +2,19 @@ package ru.netology.test;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import ru.netology.data.DataGenerator;
 import ru.netology.data.HelpSQL;
 
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
+import java.util.Locale;
+import java.time.Year;
+import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -22,13 +28,14 @@ public class TourPurchaseTests {
 
     @AfterAll
     static void teardown(){
-        //cleanDatabase();
+        cleanDatabase();
     }
 
     /*
      *  //span[text()[contains(.,'Номер карты')]]
      *  //span[text()[contains(.,'Номер карты')]]/..//input[contains(@class, 'input__control')]
      * */
+
 
     @org.junit.jupiter.api.Test
     void successfulPath() {
@@ -45,10 +52,6 @@ public class TourPurchaseTests {
                 .shouldHave(Condition.text("Операция одобрена Банком."), Duration.ofSeconds(15))
                 .shouldBe(Condition.visible);
 
-//        String a = String.valueOf(HelpSQL.getInfoPurTime());
-//        System.out.println("времи запроса " + a);
-//        String b = String.valueOf(HelpSQL.getInfoPurStatus());
-//        System.out.println("статус " + b);
 
         String res = HelpSQL.getInfoPurStatus().getStatus();
         Assertions.assertEquals("APPROVED", res);
@@ -432,5 +435,4 @@ public class TourPurchaseTests {
         String res = HelpSQL.getInfoCreditPurStatus().getStatus();
         Assertions.assertEquals("DECLINED", res);
     }
-
 }

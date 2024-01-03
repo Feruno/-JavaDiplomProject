@@ -1,0 +1,1 @@
+{"uuid":"e07b5ae7-3b30-441b-b422-ec54492693f7","name":"successfulPathCreditCardData()","children":["49dd9447-2421-4acc-9876-1091f8f16e0d"],"befores":[{"name":"setUp","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1704200814537,"stop":1704200814557}],"afters":[],"start":1704200814535,"stop":1704200819019}

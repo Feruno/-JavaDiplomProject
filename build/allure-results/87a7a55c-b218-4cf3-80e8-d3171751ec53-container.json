@@ -1,0 +1,1 @@
+{"uuid":"87a7a55c-b218-4cf3-80e8-d3171751ec53","name":"emptyAllFieldsCreditCardData()","children":["c3a54eb2-d390-420a-8264-0b2bbcabb15d"],"befores":[{"name":"setUp","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1704200955815,"stop":1704200955832}],"afters":[],"start":1704200955813,"stop":1704200956051}
