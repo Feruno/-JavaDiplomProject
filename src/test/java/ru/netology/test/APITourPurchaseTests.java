@@ -2,7 +2,11 @@ package ru.netology.test;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import ru.netology.data.APIHelp;
 import ru.netology.data.DataGenerator;
@@ -14,9 +18,18 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 import static io.restassured.RestAssured.given;
+import static ru.netology.data.HelpSQL.cleanDatabase;
 
 
 public class APITourPurchaseTests {
+    @BeforeAll
+    static void setUpAll(){
+        SelenideLogger.addListener("allure", new AllureSelenide());
+    }
+    @AfterAll
+    static void teardown(){
+        SelenideLogger.removeListener("allure");
+    }
 
 //    @Test
 //    void successfulPathAnswer() {

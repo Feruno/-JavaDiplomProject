@@ -93,8 +93,8 @@
      "holder": "Василий",
     "cvc": "101"
 }
-fзапрос  === APIHelp.IdStatusPurchase(id=37119939-5093-40ea-8af9-4d2d6d2864ce, status=APPROVED)
-Xзапрос id == 37119939-5093-40ea-8af9-4d2d6d2864ceзапрос status == APPROVED
+fзапрос  === APIHelp.IdStatusPurchase(id=9f31e3a4-9ac3-4772-b496-290d28244961, status=APPROVED)
+Xзапрос id == 9f31e3a4-9ac3-4772-b496-290d28244961запрос status == APPROVED
 Request method:	POST
 +Request URI:	http://localhost:9999/credit
 Proxy:			<none>

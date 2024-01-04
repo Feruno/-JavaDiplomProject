@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.netology.test.APITourPurchaseTests" tests="6" skipped="0" failures="2" errors="0" timestamp="2024-01-03T14:59:15" hostname="DESKTOP-U7EH9UQ" time="2.456">
+<testsuite name="ru.netology.test.APITourPurchaseTests" tests="6" skipped="0" failures="2" errors="0" timestamp="2024-01-04T13:43:53" hostname="DESKTOP-U7EH9UQ" time="2.56">
   <properties/>
-  <testcase name="creditPurchaseStatusDeclined()" classname="ru.netology.test.APITourPurchaseTests" time="2.318"/>
-  <testcase name="paymentPurchaseStatusDeclinedInvalid()" classname="ru.netology.test.APITourPurchaseTests" time="0.026">
+  <testcase name="creditPurchaseStatusDeclined()" classname="ru.netology.test.APITourPurchaseTests" time="2.419"/>
+  <testcase name="paymentPurchaseStatusDeclinedInvalid()" classname="ru.netology.test.APITourPurchaseTests" time="0.029">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;DECLINED&gt; but was: &lt;APPROVED&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;DECLINED&gt; but was: &lt;APPROVED&gt;
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -10,7 +10,7 @@
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
 	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1142)
-	at app//ru.netology.test.APITourPurchaseTests.paymentPurchaseStatusDeclinedInvalid(APITourPurchaseTests.java:62)
+	at app//ru.netology.test.APITourPurchaseTests.paymentPurchaseStatusDeclinedInvalid(APITourPurchaseTests.java:75)
 	at java.base@11/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base@11/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base@11/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -103,8 +103,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="creditPurchaseStatusApproved()" classname="ru.netology.test.APITourPurchaseTests" time="0.034"/>
-  <testcase name="paymentPurchaseStatusDeclined()" classname="ru.netology.test.APITourPurchaseTests" time="0.019"/>
+  <testcase name="creditPurchaseStatusApproved()" classname="ru.netology.test.APITourPurchaseTests" time="0.031"/>
+  <testcase name="paymentPurchaseStatusDeclined()" classname="ru.netology.test.APITourPurchaseTests" time="0.022"/>
   <testcase name="paymentPurchaseStatusApproved()" classname="ru.netology.test.APITourPurchaseTests" time="0.028"/>
   <testcase name="creditPurchaseStatusDeclinedInvalid()" classname="ru.netology.test.APITourPurchaseTests" time="0.02">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;DECLINED&gt; but was: &lt;APPROVED&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;DECLINED&gt; but was: &lt;APPROVED&gt;
@@ -114,7 +114,7 @@
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
 	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1142)
-	at app//ru.netology.test.APITourPurchaseTests.creditPurchaseStatusDeclinedInvalid(APITourPurchaseTests.java:69)
+	at app//ru.netology.test.APITourPurchaseTests.creditPurchaseStatusDeclinedInvalid(APITourPurchaseTests.java:82)
 	at java.base@11/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base@11/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base@11/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -302,8 +302,8 @@ Body:
     "holder": "Василий",
     "cvc": "101"
 }
-запрос  === APIHelp.IdStatusPurchase(id=37119939-5093-40ea-8af9-4d2d6d2864ce, status=APPROVED)
-запрос id == 37119939-5093-40ea-8af9-4d2d6d2864ceзапрос status == APPROVED
+запрос  === APIHelp.IdStatusPurchase(id=9f31e3a4-9ac3-4772-b496-290d28244961, status=APPROVED)
+запрос id == 9f31e3a4-9ac3-4772-b496-290d28244961запрос status == APPROVED
 Request method:	POST
 Request URI:	http://localhost:9999/credit
 Proxy:			<none>
