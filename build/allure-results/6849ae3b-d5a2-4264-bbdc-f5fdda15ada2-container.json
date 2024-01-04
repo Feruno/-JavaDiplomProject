@@ -1,1 +1,0 @@
-{"uuid":"6849ae3b-d5a2-4264-bbdc-f5fdda15ada2","name":"invalidYearCreditCardData()","children":["9a4e4b15-dcbd-4cbf-9c02-b13ed4e64f42"],"befores":[{"name":"setUp","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1704199859177,"stop":1704199859194}],"afters":[],"start":1704199859176,"stop":1704199859667}

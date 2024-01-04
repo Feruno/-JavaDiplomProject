@@ -1,1 +1,0 @@
-{"uuid":"ed3d4efe-2949-42da-8d24-675b1a4973ef","name":"injectionsSQLCreditCardData()","children":["3ef120ad-0fb3-4f8a-ba74-4364c05958dd"],"befores":[{"name":"setUp","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1704201861770,"stop":1704201864621}],"afters":[],"start":1704201861706,"stop":1704201881122}

@@ -1,1 +1,0 @@
-{"uuid":"df93099c-55d2-4bab-8fb2-38e7a57c5a3c","name":"lengthLimitationCreditCardData()","children":["21fb919f-eb5d-4829-924e-93869b1f1f2a"],"befores":[{"name":"setUp","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1704201225833,"stop":1704201228783}],"afters":[],"start":1704201225770,"stop":1704201244992}

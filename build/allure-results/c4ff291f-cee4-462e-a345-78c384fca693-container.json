@@ -1,1 +1,0 @@
-{"uuid":"c4ff291f-cee4-462e-a345-78c384fca693","name":"injectionsSQL()","children":["09623d00-51ad-44b7-9a55-79ca8fb46da8"],"befores":[{"name":"setUp","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1703853338300,"stop":1703853338318}],"afters":[],"start":1703853338298,"stop":1703853353980}

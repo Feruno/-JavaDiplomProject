@@ -1,1 +1,0 @@
-{"uuid":"c1b3264b-bb73-4362-af78-fd40a59c5125","name":"invalidCVC_CVV()","children":["a35ea2a4-6eb8-42e7-bf1a-5b36c4c24b48"],"befores":[{"name":"setUp","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1703620293878,"stop":1703620293897}],"afters":[],"start":1703620293877,"stop":1703620294364}

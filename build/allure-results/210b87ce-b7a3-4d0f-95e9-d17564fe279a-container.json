@@ -1,1 +1,0 @@
-{"uuid":"210b87ce-b7a3-4d0f-95e9-d17564fe279a","name":"declineCreditPurchase()","children":["162131b8-83de-4e6c-9bcb-94ce5268f405"],"befores":[{"name":"setUp","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1704200783840,"stop":1704200783858}],"afters":[],"start":1704200783838,"stop":1704200791114}
