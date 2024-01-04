@@ -10,7 +10,7 @@
 1. В терминале Intellij idea выполнить команду docker-compose up ![image](https://github.com/Feruno/-JavaDiplomProject/assets/60847105/f40da2ec-3120-4e77-985a-d9f915107416)
 1. Дождаться запуска всех трёх контейнеров. С сообщением  "/usr/sbin/mysqld: ready for connections."
 1. Запустить jar файл командой java -jar ./artifacts/aqa-shop.jar или ПКМ по jar фалу и выбрать "Run aqa-shop.jar"
-<br>  
+
 ![image](https://github.com/Feruno/-JavaDiplomProject/assets/60847105/db112fd8-897c-4d91-98da-7bba14a5a0ce) 
 
 ## Для просмотра данных, ответов на запросы нужны следующие программы.
