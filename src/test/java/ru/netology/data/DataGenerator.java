@@ -20,15 +20,18 @@ public class DataGenerator {
         private String CVC_CVV; // CVC_CVV cvc
     }
 
-    static Date date = faker.date().future(28, 1, TimeUnit.DAYS);
-    static Date datePast = faker.date().past(28, 1, TimeUnit.DAYS);
-    static SimpleDateFormat dateSimpleYear = new SimpleDateFormat("YY");
+    static Date date = faker.date().future(365, TimeUnit.DAYS);
+    static Date datePast = faker.date().past(1095, TimeUnit.DAYS);
+    static SimpleDateFormat dateSimpleYear = new SimpleDateFormat("yy");
     static SimpleDateFormat dateSimpleMonth = new SimpleDateFormat("MM");
+
+    static String numCardApproved = "4444 4444 4444 4441";
+    static String numCardDeclined = "4444 4444 4444 4442";
 
 
 
     public static InfoBuyingTour getInfoBuyingTour() {
-        return new InfoBuyingTour("4444 4444 4444 4441", dateSimpleMonth.format(date), dateSimpleYear.format(date), "Василий", "101");
+        return new InfoBuyingTour(numCardApproved, dateSimpleMonth.format(date), dateSimpleYear.format(date), "Василий", "101");
     }
     public static InfoBuyingTour getInfoBuyingTourInvalidNumCard() {
         return new InfoBuyingTour("4444 4444 0000 000@", dateSimpleMonth.format(date), dateSimpleYear.format(date), "Василий", "101");
@@ -37,26 +40,38 @@ public class DataGenerator {
         return new InfoBuyingTour("4444 4444", dateSimpleMonth.format(date), dateSimpleYear.format(date), "Василий", "101");
     }
     public static InfoBuyingTour getInfoBuyingTourInvalidMonth() {
-        return new InfoBuyingTour("4444 4444 4444 4441", "13", dateSimpleYear.format(date), "Василий", "101");
+        return new InfoBuyingTour(numCardApproved, "13", dateSimpleYear.format(date), "Василий", "101");
     }
     public static InfoBuyingTour getInfoBuyingTourInvalidYear() {
-        return new InfoBuyingTour("4444 4444 4444 4441", dateSimpleMonth.format(date), dateSimpleYear.format(datePast), "Василий", "101"); //22 год был прописан вручную
+        return new InfoBuyingTour(numCardApproved, dateSimpleMonth.format(date), dateSimpleYear.format(datePast), "Василий", "101"); //22 год был прописан вручную
     }
     public static InfoBuyingTour getInfoBuyingTourInvalidNameOwner() {
-        return new InfoBuyingTour("4444 4444 4444 4441", dateSimpleMonth.format(date), dateSimpleYear.format(date), "Василий@#", "101");
+        return new InfoBuyingTour(numCardApproved, dateSimpleMonth.format(date), dateSimpleYear.format(date), "Василий@#", "101");
     }
     public static InfoBuyingTour getInfoBuyingTourInvalidCVC_CVV() {
-        return new InfoBuyingTour("4444 4444 4444 4441", dateSimpleMonth.format(date), dateSimpleYear.format(date), "Василий", "10@");
+        return new InfoBuyingTour(numCardApproved, dateSimpleMonth.format(date), dateSimpleYear.format(date), "Василий", "10@");
     }
 
     public static InfoBuyingTour getInfoBuyingTourLengthLimitationNameOwner() {
-        return new InfoBuyingTour("4444 4444 4444 4441", dateSimpleMonth.format(date), dateSimpleYear.format(date), "Василиййййййййййййййййййййййййййййййййййййййй", "101");
+        return new InfoBuyingTour(numCardApproved, dateSimpleMonth.format(date), dateSimpleYear.format(date), "Василиййййййййййййййййййййййййййййййййййййййй", "101");
     }
     public static InfoBuyingTour getInfoBuyingTourSQLinjections() {
-        return new InfoBuyingTour("4444 4444 4444 4441", dateSimpleMonth.format(date), dateSimpleYear.format(date), "SELECT * FROM users WHERE username=' ProvidedUsername' and password='ProvidedPassword';", "101");
+        return new InfoBuyingTour(numCardApproved, dateSimpleMonth.format(date), dateSimpleYear.format(date), "SELECT * FROM users WHERE username=' ProvidedUsername' and password='ProvidedPassword';", "101");
     }
 
     public static InfoBuyingTour getInfoBuyingTourDecline() {
-        return new InfoBuyingTour("4444 4444 4444 4442", dateSimpleMonth.format(date), dateSimpleYear.format(date), "Василий", "101");
+        return new InfoBuyingTour(numCardDeclined, dateSimpleMonth.format(date), dateSimpleYear.format(date), "Василий", "101");
+    }
+
+
+    /*для helpSQL*/
+    public static APIHelp.APIInfoBuyingTour getInfoBuyingTourAPI() {
+        return new APIHelp.APIInfoBuyingTour(numCardApproved, dateSimpleMonth.format(date), dateSimpleYear.format(date), "Василий", "101");
+    }
+    public static APIHelp.APIInfoBuyingTour getInfoBuyingTourDeclineAPI() {
+        return new APIHelp.APIInfoBuyingTour(numCardDeclined, dateSimpleMonth.format(date), dateSimpleYear.format(date), "Василий", "101");
+    }
+    public static APIHelp.APIInfoBuyingTour getInfoBuyingTourInvalidAllDataExceptCard() {
+        return new APIHelp.APIInfoBuyingTour(numCardApproved, "13", "20", "Select * From", "10@");
     }
 }

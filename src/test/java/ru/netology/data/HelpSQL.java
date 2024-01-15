@@ -26,8 +26,9 @@ public class HelpSQL {
 
     private static final QueryRunner runner = new QueryRunner();
 
-    private static Connection getConn() throws SQLException{
-        return DriverManager.getConnection(System.getProperty("db.url"),  "app", "pass"); // "jdbc:mysql://localhost:3306/app"
+    @SneakyThrows
+    private static Connection getConn(){
+        return DriverManager.getConnection(System.getProperty("db.url"),  System.getProperty("app"), System.getProperty("pass")); // "jdbc:mysql://localhost:3306/app"
     }
 
     @SneakyThrows
