@@ -15,8 +15,8 @@
 ## Для запуска авто тестов с конкретной базой данных нужны следующие действия.
 1. Выполнить все прошлые шаги.
 1. Запуск тестов:
-   2. Команда для MYSQL ```./gradlew clean test "-Ddb.url=jdbc:mysql://localhost:3306/app"```
-   3. Команда для PostgreSql ```./gradlew clean test "-Ddb.url=jdbc:postgresql://localhost:5432/app"```
+   1. Команда для MYSQL ```./gradlew clean test "-Ddb.url=jdbc:mysql://localhost:3306/app"```
+   1. Команда для PostgreSql ```./gradlew clean test "-Ddb.url=jdbc:postgresql://localhost:5432/app"```
 1. Запустить allure командой ```./gradlew allureServe```
 
 
