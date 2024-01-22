@@ -52,43 +52,43 @@ public class TourPurchasePage {
     }
     public void invalidPurchase() {
         $x("//span[text()[contains(.,'Номер карты')]]/..//span[text()[contains(.,'Неверный формат')]]/..//span[contains(@class, 'input__sub')]")
-                .shouldHave(Condition.text("Неверный формат"), Duration.ofSeconds(15))
+                .shouldHave(Condition.text("Неверный формат"))
                 .shouldBe(Condition.visible);
     }
 
     public void invalidMonth(){
         $x("//span[text()[contains(.,'Месяц')]]/..//span[text()[contains(.,'Неверно указан срок действия карты')]]/..//span[contains(@class, 'input__sub')]")
-                .shouldHave(Condition.text("Неверно указан срок действия карты"), Duration.ofSeconds(15))
+                .shouldHave(Condition.text("Неверно указан срок действия карты"))
                 .shouldBe(Condition.visible);
     }
     public void emptyInvalidMonth(){
         $x("//span[text()[contains(.,'Месяц')]]/..//span[text()[contains(.,'Неверный формат')]]/..//span[contains(@class, 'input__sub')]")
-                .shouldHave(Condition.text("Неверный формат"), Duration.ofSeconds(15))
+                .shouldHave(Condition.text("Неверный формат"))
                 .shouldBe(Condition.visible);
     }
     public void invalidYear(){
         $x("//span[text()[contains(.,'Год')]]/..//span[text()[contains(.,'Истёк срок действия карты')]]/..//span[contains(@class, 'input__sub')]")
-                .shouldHave(Condition.text("Истёк срок действия карты"), Duration.ofSeconds(15))
+                .shouldHave(Condition.text("Истёк срок действия карты"))
                 .shouldBe(Condition.visible);
     }
     public void emptyInvalidYear(){
         $x("//span[text()[contains(.,'Год')]]/..//span[text()[contains(.,'Неверный формат')]]/..//span[contains(@class, 'input__sub')]")
-                .shouldHave(Condition.text("Неверный формат"), Duration.ofSeconds(15))
+                .shouldHave(Condition.text("Неверный формат"))
                 .shouldBe(Condition.visible);
     }
     public void invalidNameOwner(){
         $x("//span[text()[contains(.,'Владелец')]]/..//span[text()[contains(.,'Неверный формат')]]/..//span[contains(@class, 'input__sub')]")
-                .shouldHave(Condition.text("Неверный формат"), Duration.ofSeconds(15))
+                .shouldHave(Condition.text("Неверный формат"))
                 .shouldBe(Condition.visible);
     }
     public void emptyInvalidNameOwner(){
         $x("//span[text()[contains(.,'Владелец')]]/..//span[text()[contains(.,'Поле обязательно для заполнения')]]/..//span[contains(@class, 'input__sub')]")
-                .shouldHave(Condition.text("Поле обязательно для заполнения"), Duration.ofSeconds(15))
+                .shouldHave(Condition.text("Поле обязательно для заполнения"))
                 .shouldBe(Condition.visible);
     }
     public void InvalidCVC(){
         $x("//span[text()[contains(.,'CVC/CVV')]]/..//span[text()[contains(.,'Неверный формат')]]/..//span[contains(@class, 'input__sub')]")
-                .shouldHave(Condition.text("Неверный формат"), Duration.ofSeconds(15))
+                .shouldHave(Condition.text("Неверный формат"))
                 .shouldBe(Condition.visible);
     }
 }

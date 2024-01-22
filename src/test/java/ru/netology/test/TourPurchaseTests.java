@@ -26,7 +26,7 @@ public class TourPurchaseTests {
 
     @AfterAll
     static void teardown(){
-        cleanDatabase();
+        //cleanDatabase();
         SelenideLogger.removeListener("allure");
     }
 
@@ -51,7 +51,7 @@ public class TourPurchaseTests {
 
 
     //xpath //span[text()[contains(.,'Номер карты')]]/..//span[text()[contains(.,'Неверный формат')]]/..//span[contains(@class, 'input__sub')]
-    @org.junit.jupiter.api.Test
+    @Test
     void invalidNumCard() {
         var infoBuyTour = DataGenerator.getInfoBuyingTourInvalidNumCard();
         var tourPurchaseElemPage = new TourPurchasePage();
@@ -61,7 +61,7 @@ public class TourPurchaseTests {
         tourPurchaseElemPage.invalidPurchase();
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void incompleteNumCard() {
         var infoBuyTour = DataGenerator.getInfoBuyingTourIncompleteNumCard();
         var tourPurchaseElemPage = new TourPurchasePage();
@@ -71,7 +71,7 @@ public class TourPurchaseTests {
         tourPurchaseElemPage.invalidPurchase();
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void invalidMonth() {
         var infoBuyTour = DataGenerator.getInfoBuyingTourInvalidMonth();
         var tourPurchaseElemPage = new TourPurchasePage();
@@ -81,7 +81,7 @@ public class TourPurchaseTests {
         tourPurchaseElemPage.invalidMonth();
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void invalidYear() {
         var infoBuyTour = DataGenerator.getInfoBuyingTourInvalidYear();
 
@@ -93,7 +93,7 @@ public class TourPurchaseTests {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void invalidNameOwner() {
         var infoBuyTour = DataGenerator.getInfoBuyingTourInvalidNameOwner();
 
@@ -107,7 +107,7 @@ public class TourPurchaseTests {
         Assertions.assertEquals("APPROVED", actualRes);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void invalidCVC_CVV() {
         var infoBuyTour = DataGenerator.getInfoBuyingTourInvalidCVC_CVV();
 
@@ -118,7 +118,7 @@ public class TourPurchaseTests {
         tourPurchaseElemPage.InvalidCVC();
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void emptyAllFields() {
 
         var tourPurchaseElemPage = new TourPurchasePage();
@@ -131,7 +131,7 @@ public class TourPurchaseTests {
         tourPurchaseElemPage.InvalidCVC();
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void lengthLimitation() {
         var infoBuyTour = DataGenerator.getInfoBuyingTourLengthLimitationNameOwner();
 
@@ -146,7 +146,7 @@ public class TourPurchaseTests {
         Assertions.assertEquals("APPROVED", actualRes);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void injectionsSQL() {
         var infoBuyTour = DataGenerator.getInfoBuyingTourSQLinjections();
 
@@ -167,7 +167,7 @@ public class TourPurchaseTests {
      *
      *
      * */
-    @org.junit.jupiter.api.Test
+    @Test
     void successfulPathCreditCardData() {
         var infoBuyTour = DataGenerator.getInfoBuyingTour();
 
@@ -182,7 +182,7 @@ public class TourPurchaseTests {
     }
 
 
-    @org.junit.jupiter.api.Test
+    @Test
     void invalidNumCardCreditCardData() {
         var infoBuyTour = DataGenerator.getInfoBuyingTourInvalidNumCard();
 
@@ -193,7 +193,7 @@ public class TourPurchaseTests {
         tourPurchaseElemPage.invalidPurchase();
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void incompleteNumCardCreditCardData() {
         var infoBuyTour = DataGenerator.getInfoBuyingTourIncompleteNumCard();
         var tourPurchaseElemPage = new TourPurchasePage();
@@ -204,7 +204,7 @@ public class TourPurchaseTests {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void invalidMonthCreditCardData() {
         var infoBuyTour = DataGenerator.getInfoBuyingTourInvalidMonth();
 
@@ -215,7 +215,7 @@ public class TourPurchaseTests {
         tourPurchaseElemPage.invalidMonth();
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void invalidYearCreditCardData() {
         var infoBuyTour = DataGenerator.getInfoBuyingTourInvalidYear();
 
@@ -227,7 +227,7 @@ public class TourPurchaseTests {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void invalidNameOwnerCreditCardData() {
         var infoBuyTour = DataGenerator.getInfoBuyingTourInvalidNameOwner();
 
@@ -238,7 +238,7 @@ public class TourPurchaseTests {
         tourPurchaseElemPage.invalidNameOwner();
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void invalidCVC_CVVCreditCardData() {
         var infoBuyTour = DataGenerator.getInfoBuyingTourInvalidCVC_CVV();
 
@@ -249,7 +249,7 @@ public class TourPurchaseTests {
         tourPurchaseElemPage.InvalidCVC();
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void emptyAllFieldsCreditCardData() {
 
         var tourPurchaseElemPage = new TourPurchasePage();
@@ -262,7 +262,7 @@ public class TourPurchaseTests {
         tourPurchaseElemPage.InvalidCVC();
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void lengthLimitationCreditCardData() {
         var infoBuyTour = DataGenerator.getInfoBuyingTourLengthLimitationNameOwner();
 
@@ -276,7 +276,7 @@ public class TourPurchaseTests {
         Assertions.assertEquals("APPROVED", actualRes);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void injectionsSQLCreditCardData() {
         var infoBuyTour = DataGenerator.getInfoBuyingTourSQLinjections();
 
@@ -298,7 +298,7 @@ public class TourPurchaseTests {
     тесты с decline статусом
     */
 
-    @org.junit.jupiter.api.Test
+    @Test
     void declinePurchase() {
         var infoBuyTour = DataGenerator.getInfoBuyingTourDecline();
 
@@ -312,7 +312,7 @@ public class TourPurchaseTests {
         Assertions.assertEquals("DECLINED", res);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void declineCreditPurchase() {
         var infoBuyTour = DataGenerator.getInfoBuyingTourDecline();
 

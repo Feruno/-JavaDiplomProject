@@ -47,17 +47,17 @@ dependencies {
     implementation 'org.apache.logging.log4j:log4j-core:2.13.3'
 
     implementation group: 'io.qameta.allure', name: 'allure-selenide', version: '2.21.0'
+
+
 }
 
 test {
     testLogging.showStandardStreams = true
     useJUnitPlatform()
     systemProperty 'selenide.headless', System.getProperty('selenide.headless')
-
     //jdbc:mysql://localhost:3306/app
-    //jdbc:postgressql://localhost:5432/app
-    //jdbc:postgres://localhost:5432/app
-    systemProperty 'db.url', System.getProperty('db.url', "jdbc:mysql://localhost:3306/app")
+    //jdbc:postgresql://localhost:5432/app
+    systemProperty 'db.url', System.getProperty('db.url')
     systemProperty 'app', System.getProperty('app', "app")
     systemProperty 'pass', System.getProperty('pass', "pass")
     systemProperty 'selenide.browser', 'chrome'
