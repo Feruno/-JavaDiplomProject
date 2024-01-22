@@ -12,6 +12,7 @@
 1. Запустить jar файл командой java -jar ./artifacts/aqa-shop.jar или ПКМ по jar фалу и выбрать "Run aqa-shop.jar"
 ![image](https://github.com/Feruno/-JavaDiplomProject/assets/60847105/db112fd8-897c-4d91-98da-7bba14a5a0ce) 
 1. Запустить тесты командой ```./gradlew test```
+1. Запустить allur командой ```./gradlew allureServe```
 
 ## Для просмотра данных, ответов на запросы нужны следующие программы.
 1. Postman - для просмотра API запросов/ответов.
