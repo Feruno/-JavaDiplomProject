@@ -12,12 +12,27 @@
 1. Запустить jar файл командой java -jar ./artifacts/aqa-shop.jar или ПКМ по jar фалу и выбрать "Run aqa-shop.jar"
 ![image](https://github.com/Feruno/-JavaDiplomProject/assets/60847105/db112fd8-897c-4d91-98da-7bba14a5a0ce) 
 
-## Для запуска авто тестов с конкретной базой данных нужны следующие действия.
+## Для запуска авто тестов с конкретной базой данных.
 1. Выполнить все прошлые шаги.
 1. Запуск тестов:
    1. Команда для MYSQL ```./gradlew clean test "-Ddb.url=jdbc:mysql://localhost:3306/app"```
    1. Команда для PostgreSql ```./gradlew clean test "-Ddb.url=jdbc:postgresql://localhost:5432/app"```
 1. Запустить allure командой ```./gradlew allureServe```
+
+## Альтернативный вариант для запуска авто тестов с конкретной базой данных нужны следующие действия.
+1. Запустить docker командой. ```docker-compose up```.
+1. Выберите с какой базай данных будете запускать тесты:
+   1. Команда для MYSQL ```"-Ddb.url=jdbc:mysql://localhost:3306/app"```
+   1. Команда для PostgreSql ```"-Ddb.url=jdbc:postgresql://localhost:5432/app"```
+1. Запустить тесты командой 
+
+```
+java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app" "-Dspring.datasource.username=app" "-Dspring.datasource.password=pass" -jar ./artifacts/aqa-shop.jar
+sleep
+./gradlew clean test "-Ddb.url=jdbc:postgresql://localhost:5432/app"
+sleep
+./gradlew allureServe 
+   ```
 
 
 ## Для просмотра данных, ответов на запросы нужны следующие программы.
